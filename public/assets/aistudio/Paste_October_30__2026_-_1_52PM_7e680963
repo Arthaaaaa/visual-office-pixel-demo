@@ -1,0 +1,1628 @@
+# PROJECT: COZY PIXEL OFFICE
+## An Interactive, Living Pixel-Art Virtual Office Simulator
+
+### 1. YOUR ROLE
+
+Act as a senior creative developer, pixel-art game designer, UI/UX designer, frontend engineer, and interactive experience designer.
+
+Create a complete, polished, interactive, browser-based pixel-art virtual office simulator named **Cozy Pixel Office**.
+
+The experience combines:
+- A charming pixel-art simulation game.
+- A living virtual office with adorable AI-agent-inspired characters.
+- An interactive office map with multiple rooms.
+- A productivity dashboard that visualizes simulated agent activities.
+- A cozy, relaxing atmosphere with ambient music, subtle sound effects, and dynamic day/night environments.
+
+The result should feel like a tiny, living world that users can observe, explore, and interact with.
+
+This project will be showcased as a standalone visual experiment in an existing personal portfolio. It is NOT the portfolio website itself.
+
+**Build the actual interactive application, not a static mockup, a design concept, or a collection of disconnected screens.**
+
+---
+
+# 2. CORE CREATIVE DIRECTION
+
+## 2.1. Visual Identity
+
+Create a delightful, cozy, highly polished pixel-art environment inspired by the charm of classic pixel-art simulation games, combined with a contemporary productivity dashboard.
+
+The atmosphere should feel:
+- Cute and welcoming.
+- Calm, peaceful, and slightly whimsical.
+- Warm and emotionally engaging.
+- Visually rich without feeling cluttered.
+- Playful without looking childish.
+- Sophisticated enough to be presented in a professional developer portfolio.
+
+Imagine entering a tiny pixel-art office where adorable little characters are busy doing their jobs.
+
+Some characters are typing on computers. Others are walking to meetings, preparing coffee, reading documents, discussing tasks, or taking a short break.
+
+The office should feel active but never chaotic.
+
+The user should feel like they are observing a miniature digital ecosystem.
+
+### Artistic direction
+
+Use:
+- Carefully crafted pixel-art sprites.
+- Consistent pixel proportions and outlines.
+- Small environmental animations.
+- Charming furniture and decorative objects.
+- Layered environments that create a sense of depth.
+- Warm lighting and soft shadows.
+- Subtle environmental particles where appropriate.
+- Carefully selected pastel colors.
+- Crisp, sharp pixel rendering.
+
+Use a consistent pixel-art grid and sprite style across the entire application.
+
+Characters, furniture, walls, floors, computers, plants, windows, and decorations must all feel as if they belong to the same game world.
+
+Avoid mixing pixel-art characters with unrelated realistic 3D assets, generic vector illustrations, or mismatched art styles.
+
+### Color palette
+
+Use a harmonious palette built around:
+
+- Cream: `#FFF4DF`
+- Warm ivory: `#F8EBD5`
+- Soft peach: `#F5B99B`
+- Pastel pink: `#F3C6D3`
+- Sage green: `#B8D0B0`
+- Muted mint: `#C9E4D4`
+- Sky blue: `#B9D9ED`
+- Lavender: `#D5C9F0`
+- Warm brown: `#8B6F5A`
+- Dark cocoa: `#493A35`
+
+These colors are a starting point, not rigid limitations.
+
+The final palette should feel cohesive, readable, and comfortable for extended viewing.
+
+Use bright colors sparingly for interactive elements, task indicators, and important status changes.
+
+---
+
+# 3. APPLICATION STRUCTURE
+
+Build a complete single-page application with the following major areas:
+
+1. Application header.
+2. Main virtual office environment.
+3. Interactive camera controls.
+4. Office navigation and room selector.
+5. Agent roster.
+6. Agent details and task inspector.
+7. Productivity overview.
+8. Notification center.
+9. Ambient audio controls.
+10. Theme and environment controls.
+11. Settings panel.
+
+The virtual office must be the visual centerpiece of the application.
+
+The dashboard should support and enhance the world rather than overpower it.
+
+Do not make the interface look like a conventional enterprise SaaS dashboard with a large office illustration inserted into the middle.
+
+Instead, design it as an interactive game-like workspace with a sophisticated productivity interface surrounding a living pixel-art world.
+
+---
+
+# 4. MAIN SCREEN AND LAYOUT
+
+## 4.1. Desktop Layout
+
+Design the desktop experience around a spacious, visually dominant office canvas.
+
+Suggested structure:
+
+### Top navigation
+
+A compact header containing:
+- Cute pixel-art application logo.
+- Application name: Cozy Pixel Office.
+- Current in-world time.
+- Current environment indicator: Morning, Afternoon, Evening, or Night.
+- Active agents count.
+- Completed tasks count.
+- Notification button.
+- Music toggle and volume control.
+- Light/dark mode toggle.
+- Settings button.
+
+Use small pixel-art icons where appropriate.
+
+Keep the header compact so it does not compete with the environment.
+
+### Left sidebar
+
+Create a collapsible navigation sidebar containing:
+
+- Overview.
+- Virtual Office.
+- Agents.
+- Tasks.
+- Activity Log.
+- Settings.
+
+Below the navigation, display a miniature agent roster.
+
+Each roster item should include:
+- Small character portrait.
+- Agent name.
+- Current activity.
+- Status indicator.
+- Optional progress indicator.
+
+Selecting an agent must open its details without requiring navigation to a separate website.
+
+### Central workspace
+
+The central workspace contains the interactive pixel-art office.
+
+It should occupy most of the available viewport.
+
+The office must be visually rich, animated, and explorable.
+
+Include:
+- Multiple interconnected rooms.
+- Animated characters.
+- Furniture and equipment.
+- Windows and environmental decorations.
+- Camera panning and zooming.
+- Interactive character selection.
+- Clickable furniture and room entrances.
+- A small map or room navigation interface.
+
+### Right-side inspector
+
+Create a contextual inspector panel.
+
+When the user selects an agent, display:
+- Agent portrait.
+- Name and role.
+- Current activity.
+- Current task.
+- Task description.
+- Progress.
+- Task status.
+- Previous completed tasks.
+- Upcoming tasks.
+- Current room.
+- Behavioral state.
+- Interaction controls.
+
+When no agent is selected, display a compact overview with:
+- Active agents.
+- Tasks in progress.
+- Completed tasks.
+- Recent activity.
+- Current office mood.
+
+Allow the panel to collapse to provide more space for exploring the world.
+
+### Bottom controls
+
+Provide a subtle control bar for:
+- Camera zoom.
+- Reset camera.
+- Music volume.
+- Sound settings.
+- Room navigation.
+- Pause/resume ambient simulation.
+
+The controls should feel integrated with the pixel-art world rather than like an unrelated game HUD.
+
+## 4.2. Responsive Layout
+
+The application must work smoothly on:
+- Desktop monitors.
+- Laptops.
+- Tablets.
+- Mobile browsers.
+
+On desktop, prioritize the immersive office canvas.
+
+On tablets, make the side panels collapsible.
+
+On mobile:
+- Prioritize the office canvas.
+- Use compact floating controls.
+- Move agent details into a bottom sheet or slide-over panel.
+- Provide accessible room navigation.
+- Ensure touch gestures work naturally.
+- Prevent the dashboard from making the office canvas unusably small.
+
+The application must remain fully functional even when viewed in a narrow viewport.
+
+Do not simply shrink the desktop layout to fit mobile.
+
+---
+
+# 5. THE PIXEL-ART OFFICE WORLD
+
+## 5.1. Create Multiple Distinct Rooms
+
+Build a cohesive office environment consisting of several visually distinct rooms.
+
+At minimum, implement these six rooms.
+
+### Room 1: Main Workspace
+
+The primary office area.
+
+Include:
+- Multiple desks.
+- Computers and laptops.
+- Ergonomic chairs.
+- Desk lamps.
+- Books and documents.
+- Small plants.
+- Sticky notes.
+- Personal decorations.
+- Windows.
+- Wall clocks.
+- Shelves.
+- Floor decorations.
+
+Characters should sit at their desks and work on computers.
+
+Some should occasionally stretch, look at their monitors, pick up documents, or turn toward a nearby coworker.
+
+The main workspace should feel busy but peaceful.
+
+### Room 2: Creative Studio
+
+A colorful space for creative work.
+
+Include:
+- Drawing tablets.
+- Multiple monitors.
+- Pixel-art posters.
+- Color swatches.
+- Sketchbooks.
+- Design boards.
+- Creative desks.
+- Decorative lighting.
+
+Characters may draw, inspect designs, walk between workstations, or discuss ideas.
+
+### Room 3: Meeting Room
+
+A collaborative room containing:
+- A meeting table.
+- Several chairs.
+- A whiteboard.
+- A wall-mounted screen.
+- Notes and presentation materials.
+
+Characters should occasionally gather around the table, point at the whiteboard, present ideas, or participate in small meetings.
+
+Meetings should be simulated through coordinated animations and visual states.
+
+### Room 4: Cozy Break Room
+
+A warm, relaxing space containing:
+- A coffee machine.
+- A refrigerator.
+- A small dining table.
+- Comfortable chairs.
+- Snacks.
+- Cups and mugs.
+- Plants.
+- A window.
+
+Characters can visit this room to drink coffee, eat snacks, chat, or take a break.
+
+This room should be particularly charming and cozy.
+
+### Room 5: Quiet Focus Room
+
+A calm room designed for concentration.
+
+Include:
+- Minimal desks.
+- Soft lighting.
+- Bookshelves.
+- Indoor plants.
+- Comfortable chairs.
+- Small desk lamps.
+
+Characters here should exhibit quieter behaviors such as typing, reading, reviewing documents, and concentrating.
+
+Use restrained animations and a peaceful visual composition.
+
+### Room 6: Operations Room
+
+A more technical workspace with:
+- Multiple monitors.
+- Server-inspired decorations.
+- Network diagrams.
+- Task boards.
+- Digital dashboards.
+- Equipment racks.
+
+Characters may inspect information, review task boards, analyze simulated data, or work on technical tasks.
+
+Maintain the same charming visual language as the other rooms.
+
+## 5.2. Room Connectivity
+
+The rooms should form a coherent virtual office rather than six unrelated illustrations.
+
+Use connected corridors, doorways, or a navigable floor plan.
+
+Users must be able to:
+- Move between rooms using navigation controls.
+- Click room entrances where appropriate.
+- Select rooms from a mini-map.
+- Jump directly to a room.
+- Return to the overall office view.
+
+Each room should have its own identity while maintaining consistent scale, perspective, lighting, and visual style.
+
+If the entire office cannot fit into the viewport, allow the user to pan and zoom around the larger environment.
+
+---
+
+# 6. PIXEL-ART CHARACTERS
+
+## 6.1. Character Design
+
+Create a memorable cast of adorable office characters.
+
+The characters should be expressive, distinctive, and visually recognizable even at relatively small sizes.
+
+Possible character concepts:
+- A tiny orange cat wearing a hoodie.
+- A round cream-colored bunny with oversized headphones.
+- A little frog carrying a coffee mug.
+- A chubby bear wearing a cardigan.
+- A tiny ghost-like assistant with a laptop.
+- A small duck wearing a developer hoodie.
+- A round hamster with glasses.
+- A sleepy-looking but enthusiastic office penguin.
+
+These are examples of possible designs, not mandatory restrictions.
+
+Aim for a charming cast of approximately 8–12 distinct characters.
+
+Each character must have:
+- A unique name.
+- A distinct silhouette.
+- A recognizable color palette.
+- A clear personality.
+- A specific professional role.
+- A designated home workstation or preferred room.
+- A set of simulated tasks.
+- Multiple animation states.
+- Individual behavioral preferences.
+
+Examples of roles:
+- Research Assistant.
+- Creative Designer.
+- Code Builder.
+- Quality Inspector.
+- Project Coordinator.
+- Data Analyst.
+- Documentation Writer.
+- Operations Assistant.
+- Meeting Coordinator.
+- Content Creator.
+
+Avoid making every character look like the same sprite with a different color.
+
+Create variation in:
+- Body shape.
+- Accessories.
+- Clothing.
+- Ear and tail shapes.
+- Headwear.
+- Glasses.
+- Work equipment.
+- Idle animations.
+
+Characters should be cute without becoming visually noisy.
+
+## 6.2. Character Animation Requirements
+
+**Every character must have at least 2–3 genuinely distinct behavioral states.**
+
+Preferably, provide four or more states for characters whose activities support them.
+
+Examples:
+
+**Working**
+- Sitting at a desk.
+- Typing on a keyboard.
+- Looking at a monitor.
+- Occasionally moving their head or body.
+- Showing a subtle typing animation.
+
+**Walking**
+- Moving between designated locations.
+- Using a recognizable walking animation.
+- Changing orientation based on direction.
+- Stopping at doorways or workstation destinations.
+
+**Idle**
+- Blinking.
+- Looking around.
+- Stretching.
+- Adjusting glasses.
+- Wiggling ears or tails.
+- Shifting their sitting position.
+
+**Socializing**
+- Facing another character.
+- Using simple conversational gestures.
+- Displaying a temporary speech bubble.
+- Participating in a coordinated interaction.
+
+**Taking a break**
+- Drinking coffee.
+- Eating a snack.
+- Sitting in a lounge chair.
+- Relaxing near a window.
+
+**Completing a task**
+- Finishing a typing sequence.
+- Displaying a small celebratory animation.
+- Showing a completion indicator.
+- Returning to idle or moving toward the next task.
+
+Not every character needs every behavior, but every character must have multiple distinct behaviors.
+
+Do not implement all character behaviors as random movements with no context.
+
+Their actions should correspond to their current task, room, and behavioral state.
+
+## 6.3. Character Movement
+
+Characters should move naturally around the office.
+
+Implement a lightweight movement system that supports:
+- Waypoints.
+- Destination selection.
+- Walking speed.
+- Directional orientation.
+- Idle pauses.
+- Movement between rooms.
+- Desk interaction.
+- Destination-based movement.
+- Basic obstacle avoidance or predefined walkable paths.
+
+Characters should not walk through desks, walls, chairs, or other major obstacles.
+
+Use predefined walkable paths, waypoints, or a simple navigation graph where appropriate.
+
+Characters should stop at sensible interaction points instead of overlapping furniture.
+
+Use slight timing variations so characters do not all perform the same action simultaneously.
+
+Avoid perfectly synchronized movements.
+
+Characters should occasionally:
+- Leave their desks.
+- Walk to the break room.
+- Visit another workstation.
+- Attend meetings.
+- Return to work.
+- Move toward their next scheduled task.
+
+Movement must be deterministic enough to feel intentional while still having enough variation to make the environment feel alive.
+
+## 6.4. Character Interaction
+
+Characters must be interactive.
+
+When a character is clicked or tapped:
+- Highlight the selected character.
+- Open the agent inspector.
+- Show their name and role.
+- Display their current task.
+- Display task progress.
+- Show their current behavior.
+- Show their current room.
+- Reveal their recent activity.
+
+Provide a clear visual connection between the selected character in the office and their profile in the inspector.
+
+For example:
+- Add a subtle selection outline.
+- Display a small name tag.
+- Highlight their workstation.
+- Optionally focus the camera on them.
+
+Provide buttons such as:
+- View Tasks.
+- Follow Character.
+- Focus Camera.
+- Return to Work.
+- Dismiss Selection.
+
+These interactions may modify the local simulation state, but must not imply that real external AI agents are being controlled.
+
+All actions are simulated locally.
+
+---
+
+# 7. CHARACTER TASK SYSTEM
+
+## 7.1. Simulated Task Management
+
+Create a frontend-only task system.
+
+Each character should have a task queue containing multiple simulated tasks.
+
+Example tasks:
+
+Research Assistant:
+- Collect reference materials.
+- Summarize research notes.
+- Organize findings.
+- Prepare a short report.
+
+Creative Designer:
+- Create a moodboard.
+- Refine color palettes.
+- Review interface layouts.
+- Export design assets.
+
+Code Builder:
+- Implement a UI component.
+- Review component behavior.
+- Fix a simulated bug.
+- Run a mock quality check.
+
+Documentation Writer:
+- Draft documentation.
+- Review existing notes.
+- Organize project information.
+- Finalize a document.
+
+Project Coordinator:
+- Review task progress.
+- Prepare meeting notes.
+- Update the project board.
+- Organize upcoming activities.
+
+These tasks are examples. Populate the application with believable, varied task data.
+
+## 7.2. Task Statuses
+
+Support the following task statuses:
+- Queued.
+- In Progress.
+- Completed.
+- Paused.
+
+Each task should contain:
+- Task title.
+- Short description.
+- Assigned character.
+- Current status.
+- Progress percentage.
+- Estimated duration.
+- Start time.
+- Completion time, when applicable.
+- Priority.
+- Associated room.
+
+Use progress bars or compact visual indicators.
+
+Do not require a backend or external database.
+
+Store initial data locally in the application code.
+
+Use a lightweight client-side state management approach.
+
+## 7.3. Task Progression
+
+Tasks should progress automatically according to their simulated durations.
+
+When a task starts:
+- The character moves to an appropriate workstation if necessary.
+- Their behavior changes to match the task.
+- The task progress indicator updates.
+- The inspector reflects the current status.
+
+When a task completes:
+- The progress reaches 100%.
+- The task status changes to Completed.
+- The character performs a small completion animation.
+- A completion notification appears if notifications are enabled.
+- The activity log records the event.
+- The character may begin the next queued task.
+
+Use sensible timing so users can observe the system working without waiting excessively.
+
+For demonstration purposes, simulated tasks may complete in relatively short intervals.
+
+Provide adjustable simulation speed in the settings.
+
+Do not make progress jump randomly without a clear connection to task state.
+
+---
+
+# 8. INTERACTIVE CAMERA SYSTEM
+
+The camera is a critical feature.
+
+Users must be able to explore the office naturally.
+
+## 8.1. Pan and Drag
+
+Support:
+- Click-and-drag camera movement on desktop.
+- Touch-and-drag movement on mobile.
+- Smooth camera transitions.
+- Optional keyboard navigation.
+- A reset-camera control.
+
+Dragging the environment should move the camera rather than accidentally selecting characters.
+
+Distinguish between a click and a drag.
+
+## 8.2. Zoom
+
+Provide:
+- Mouse-wheel zoom.
+- Trackpad-compatible zoom where possible.
+- Pinch-to-zoom on touch devices.
+- Zoom-in and zoom-out buttons.
+- A visible zoom indicator.
+- Minimum and maximum zoom limits.
+
+Zoom should focus around the pointer position or gesture center where practical.
+
+Prevent the camera from drifting into invalid areas.
+
+Use smooth interpolation for camera movement and zoom.
+
+## 8.3. Camera Presets
+
+Provide useful camera actions:
+- View Entire Office.
+- Focus on Main Workspace.
+- Focus on Creative Studio.
+- Focus on Meeting Room.
+- Focus on Break Room.
+- Focus on Quiet Focus Room.
+- Focus on Operations Room.
+- Follow Selected Character.
+
+When switching rooms, smoothly move the camera to the destination.
+
+Do not abruptly replace the entire environment with a different screen.
+
+## 8.4. Mini-Map
+
+Include a small, collapsible mini-map showing:
+- Room locations.
+- Room labels or icons.
+- Approximate character positions.
+- The current camera viewport.
+- Clickable room destinations.
+
+Use a simplified pixel-art floor plan.
+
+The mini-map should be visually charming but unobtrusive.
+
+---
+
+# 9. INTERACTIVE ENVIRONMENT
+
+The environment should respond to user interaction.
+
+Make selected environmental elements clickable.
+
+Examples:
+- Clicking a computer shows the assigned character and their current task.
+- Clicking a coffee machine displays a small contextual interaction.
+- Clicking a meeting table reveals ongoing or upcoming meetings.
+- Clicking a task board opens a compact task overview.
+- Clicking a plant may trigger a tiny playful animation.
+- Clicking a window may display a short environmental message.
+- Clicking a room entrance navigates to the adjacent area.
+
+Interactions should be delightful but subtle.
+
+Do not turn every object into a button.
+
+Only interactive objects should visibly communicate that they can be clicked.
+
+Use small tooltips or contextual popovers to explain interactions.
+
+Avoid large modal dialogs for trivial actions.
+
+---
+
+# 10. PRODUCTIVITY DASHBOARD
+
+The dashboard should complement the virtual office and make its activity understandable.
+
+Use compact, visually engaging data visualizations.
+
+Avoid generic enterprise dashboard design.
+
+## 10.1. Overview Metrics
+
+Display:
+- Total agents.
+- Currently working.
+- Currently idle.
+- Tasks in progress.
+- Tasks completed.
+- Overall task completion percentage.
+
+Use small pixel-art icons, soft cards, and readable typography.
+
+Metric cards may use subtle hover effects and animated number changes.
+
+All numbers must come from the local simulation state rather than unrelated hardcoded display values.
+
+## 10.2. Agent Overview
+
+Provide an agent list or grid showing:
+- Character portrait.
+- Name.
+- Role.
+- Current status.
+- Current room.
+- Current task.
+- Progress.
+
+Selecting an agent should focus the corresponding character in the virtual office.
+
+## 10.3. Task Board
+
+Provide a task overview organized by status.
+
+Suggested columns:
+- Queued.
+- In Progress.
+- Completed.
+
+Include:
+- Task title.
+- Assigned agent.
+- Progress.
+- Priority.
+- Associated room.
+
+Allow filtering by:
+- Character.
+- Task status.
+- Room.
+- Priority.
+
+The task board should be interactive, with changes reflected in the simulated state.
+
+## 10.4. Activity Log
+
+Create a chronological feed showing simulated events, such as:
+- An agent started working.
+- A task reached 50% progress.
+- A task was completed.
+- An agent moved to another room.
+- A meeting started.
+- An agent took a break.
+
+Use small character portraits and timestamps.
+
+Activity entries must correspond to actual local simulation events.
+
+Do not fabricate unrelated activity entries merely to make the interface look busy.
+
+Provide a clear empty state if the activity log has no entries.
+
+## 10.5. Productivity Visualization
+
+Include a small, tasteful chart showing task completion over time or task distribution by status.
+
+Use local simulation data.
+
+Keep the visualization simple and readable.
+
+Avoid excessive graphs or unnecessary enterprise analytics.
+
+---
+
+# 11. NOTIFICATION SYSTEM
+
+Create a fully functional local notification system.
+
+## 11.1. Completion Notifications
+
+When a character completes a task:
+- Display a small toast notification.
+- Include the character's portrait.
+- Include the character's name.
+- Show the completed task title.
+- Display a short, friendly message.
+- Include a subtle visual animation.
+- Optionally play a soft notification sound.
+
+Example messages:
+- "Mochi finished organizing the research notes!"
+- "Pip completed a design review!"
+- "Bean wrapped up the latest coding task!"
+- "Luna finished preparing the meeting notes!"
+
+Vary the messages naturally.
+
+Avoid loud, disruptive, or excessively frequent notifications.
+
+## 11.2. Notification Center
+
+Provide a notification panel accessible from the header.
+
+It should display recent events, including task completions.
+
+Allow users to:
+- Open the notification center.
+- Dismiss individual notifications.
+- Clear all notifications.
+- Mark notifications as read.
+- See a badge for unread notifications.
+
+## 11.3. Notification Settings
+
+Provide a notification enable/disable toggle.
+
+When notifications are disabled:
+- Do not display completion toasts.
+- Do not play notification sounds.
+- Continue updating task progress normally.
+- Continue recording activity in the activity log.
+- Preserve the user's setting during the current browser session.
+
+Distinguish notification sounds from ambient background music.
+
+Turning off notifications must not automatically stop the background music.
+
+Persist the notification preference locally.
+
+---
+
+# 12. AMBIENT AUDIO AND MUSIC
+
+Add an immersive but calming audio experience.
+
+The goal is to make the virtual office feel peaceful and alive.
+
+## 12.1. Background Music
+
+Provide a looping ambient soundtrack suitable for a cozy virtual office.
+
+Preferred styles:
+- Soft lo-fi instrumental.
+- Gentle ambient piano.
+- Warm, unobtrusive background music.
+- Subtle, relaxing electronic ambience.
+
+Avoid:
+- Loud beats.
+- Aggressive electronic music.
+- Dramatic cinematic music.
+- Vocals that compete with the experience.
+- Sudden volume changes.
+
+The music should support concentration rather than distract the user.
+
+## 12.2. Audio Controls
+
+Include:
+- Play/pause music.
+- Volume slider.
+- Mute toggle.
+- Music status indicator.
+- Optional sound-effects toggle.
+- Optional ambient mode selection.
+
+Possible ambient modes:
+- Cozy Café.
+- Rainy Afternoon.
+- Quiet Office.
+- Peaceful Night.
+
+If multiple tracks are available locally, allow users to switch between them.
+
+Otherwise, provide a suitable default ambient track.
+
+## 12.3. Audio Implementation
+
+Use available local audio assets when possible.
+
+If suitable audio assets are not available, use legally usable audio resources or create simple synthesized ambient effects where appropriate.
+
+Do not depend on inaccessible external audio files.
+
+Do not autoplay audible music immediately when the page loads.
+
+Browsers often restrict autoplay, so begin playback after the user explicitly interacts with the audio control or enables the audio experience.
+
+Persist the user's audio preferences locally.
+
+Ensure that the experience remains fully usable when audio is unavailable.
+
+## 12.4. Sound Effects
+
+Use subtle sound effects for:
+- Button interactions.
+- Character selection.
+- Task completion.
+- Notification appearance.
+- Room transitions.
+- Optional environmental interactions.
+
+Sound effects must be short, soft, and unobtrusive.
+
+Provide a separate sound-effects toggle.
+
+Do not play a sound for every tiny character movement.
+
+---
+
+# 13. DAY/NIGHT CYCLE
+
+Create a visual day/night system that changes the atmosphere of the virtual office.
+
+The environment should feel like a living place that changes throughout the day.
+
+Support:
+- Morning.
+- Afternoon.
+- Evening.
+- Night.
+
+The cycle may progress automatically according to simulated time.
+
+Also provide a manual time-of-day selector in the settings.
+
+The user should be able to preview the different environments immediately.
+
+## 13.1. Morning
+
+Atmosphere:
+- Warm sunlight.
+- Soft golden highlights.
+- Bright windows.
+- Cheerful pastel colors.
+- Gentle environmental brightness.
+
+Characters gradually begin their work routines.
+
+## 13.2. Afternoon
+
+Atmosphere:
+- Neutral daylight.
+- Bright but comfortable lighting.
+- Balanced color contrast.
+- Active workspaces.
+
+## 13.3. Evening
+
+Atmosphere:
+- Warm orange sunlight.
+- Long, soft shadows.
+- Desk lamps becoming more prominent.
+- Slightly warmer interior lighting.
+- A more relaxed environment.
+
+## 13.4. Night
+
+Atmosphere:
+- Dark blue or deep purple sky.
+- Small glowing stars visible through windows where appropriate.
+- Moonlight.
+- Warm desk lamps.
+- Dim ambient lighting.
+- Softly illuminated computer monitors.
+- Cozy pools of light around workstations.
+- Muted environmental colors.
+
+The night environment should feel peaceful, quiet, and beautiful.
+
+Do not simply place a dark overlay on the daytime office.
+
+Create a genuinely different lighting composition.
+
+Transition smoothly between time periods.
+
+The office should remain readable, and interactive elements must remain easy to identify.
+
+---
+
+# 14. DARK MODE: COMPLETE ENVIRONMENT TRANSFORMATION
+
+Dark mode is a core feature, not a minor theme toggle.
+
+**It must transform both the dashboard interface and the pixel-art world.**
+
+The entire experience should become a quiet nighttime office.
+
+## 14.1. Dashboard Dark Theme
+
+Use a carefully designed dark palette.
+
+Suggested colors:
+- Background: `#171923`
+- Elevated panels: `#222535`
+- Secondary panels: `#2B3042`
+- Main text: `#E9EAF2`
+- Secondary text: `#A8ADC2`
+- Muted lavender: `#AFA1F5`
+- Soft mint: `#A7D8BE`
+- Warm peach: `#E9B49B`
+- Border: `#3B4054`
+
+Avoid pure black backgrounds everywhere.
+
+Use subtle contrast between layers.
+
+Keep text readable and comfortable for long sessions.
+
+Avoid excessive neon colors or highly saturated glowing elements.
+
+## 14.2. World Dark Theme
+
+When dark mode is enabled, transform the office environment itself.
+
+Apply coordinated changes to:
+- Walls.
+- Floors.
+- Windows.
+- Outdoor scenery.
+- Furniture.
+- Plants.
+- Character palettes where appropriate.
+- Computer screens.
+- Desk lamps.
+- Ambient shadows.
+- Environmental particles.
+- Room decorations.
+
+Use:
+- Deep navy.
+- Muted indigo.
+- Dusty purple.
+- Dark sage.
+- Warm brown.
+- Soft amber lighting.
+- Subtle cyan highlights.
+
+Windows should show a night sky rather than a daytime landscape.
+
+Desk lamps should cast warm pools of light.
+
+Computer monitors may emit a gentle glow.
+
+Character sprites should remain recognizable and expressive against the darker environment.
+
+Do not darken characters until their facial expressions become unreadable.
+
+Preserve visual hierarchy and interactive feedback.
+
+## 14.3. Ambient Lighting
+
+Implement a lightweight lighting treatment that gives the night environment depth.
+
+Possible techniques:
+- Layered translucent lighting overlays.
+- Soft radial gradients.
+- Warm lamp halos.
+- Window lighting.
+- Carefully controlled screen glow.
+- Subtle shadow layers.
+
+Keep lighting effects performant.
+
+Do not use so many blur filters that the browser struggles to render the environment.
+
+The pixel-art assets should retain their crisp edges.
+
+Use soft lighting around pixel-art objects without making the entire scene blurry.
+
+## 14.4. Theme Synchronization
+
+Dark mode must update all application components together:
+- Header.
+- Sidebar.
+- Dashboard cards.
+- Charts.
+- Task board.
+- Inspector.
+- Notifications.
+- Tooltips.
+- Mini-map.
+- Room navigation.
+- Pixel-art environment.
+- Environmental lighting.
+- Text and icon contrast.
+
+Switching themes must not cause layout shifts.
+
+Persist the selected theme locally.
+
+Provide a smooth, restrained transition between themes.
+
+---
+
+# 15. SIMULATION SETTINGS
+
+Create a dedicated settings panel.
+
+Include the following controls.
+
+### Simulation
+- Start/pause simulation.
+- Simulation speed.
+- Automatic day/night cycle.
+- Manual time-of-day selection.
+- Character movement frequency.
+
+### Appearance
+- Light mode.
+- Dark mode.
+- Follow system theme, if supported.
+- Ambient lighting intensity.
+- UI animation intensity.
+
+### Audio
+- Background music.
+- Music volume.
+- Sound effects.
+- Sound-effects volume.
+
+### Notifications
+- Enable/disable notifications.
+- Enable/disable notification sounds.
+- Clear notification history.
+
+### Camera
+- Default zoom.
+- Camera sensitivity.
+- Follow selected character.
+- Show/hide mini-map.
+
+### Accessibility
+- Reduce motion.
+- Keyboard navigation.
+- High-contrast option where practical.
+
+Settings should be functional, not decorative.
+
+Every control should change the relevant behavior.
+
+Persist appropriate settings using localStorage.
+
+---
+
+# 16. VISUAL POLISH AND MICRO-INTERACTIONS
+
+Pay special attention to small details.
+
+Examples:
+- Characters blink occasionally.
+- Laptop screens animate subtly.
+- Coffee steam rises from mugs.
+- Plants sway gently.
+- Desk lamps glow.
+- Window scenery changes with the time of day.
+- Task completion produces a small burst of pixel particles.
+- Character selection creates a soft highlight.
+- Tooltips appear with a short, smooth transition.
+- Panels slide into view without abrupt movement.
+- Progress bars animate smoothly.
+- Notification cards enter and exit gracefully.
+- Room transitions preserve the sense of a continuous world.
+
+Use animation purposefully.
+
+Not every element should move at once.
+
+Create visual hierarchy through differences in movement, scale, color, and timing.
+
+Use restrained easing and short, satisfying transitions.
+
+Support reduced-motion preferences.
+
+Avoid:
+- Excessive bounce animations.
+- Constant camera movement.
+- Distracting blinking effects.
+- Unnecessary parallax.
+- Random screen shaking.
+- Excessive particles.
+- Long animations that delay interaction.
+
+The application should feel alive without becoming exhausting to watch.
+
+---
+
+# 17. TECHNICAL IMPLEMENTATION
+
+## 17.1. Frontend Only
+
+This is a demonstration project.
+
+There is no backend.
+
+Do not implement:
+- User authentication.
+- Server APIs.
+- Database services.
+- External AI model calls.
+- Real agent orchestration.
+- Real task execution.
+- Payment systems.
+- Cloud synchronization.
+- Server-side notification services.
+
+All characters, tasks, productivity metrics, events, and interactions must be simulated locally.
+
+The application must work as a self-contained frontend experience.
+
+## 17.2. State Management
+
+Create a coherent local simulation model.
+
+The application should maintain state for:
+- Characters.
+- Character positions.
+- Character behavioral states.
+- Current rooms.
+- Task queues.
+- Task progress.
+- Task statuses.
+- Activity events.
+- Notifications.
+- Camera position.
+- Camera zoom.
+- Selected character.
+- Selected room.
+- Theme.
+- Time of day.
+- Audio settings.
+- User preferences.
+
+Keep the data model organized and easy to modify.
+
+Avoid scattering unrelated hardcoded values throughout the UI.
+
+Use structured data objects for characters, rooms, tasks, and environmental interactions.
+
+## 17.3. Persistence
+
+Use localStorage for appropriate user preferences, including:
+- Selected theme.
+- Audio preferences.
+- Notification preferences.
+- Simulation settings.
+- Other useful interface preferences.
+
+Use sensible defaults when no saved settings exist.
+
+Handle missing or invalid stored values gracefully.
+
+Do not store large unnecessary animation data in localStorage.
+
+Task and simulation state may reset when the application reloads unless persistence is needed for a coherent demonstration.
+
+Make it clear that the application is a local simulation.
+
+## 17.4. Rendering and Animation
+
+Choose the rendering approach best suited to a richly animated pixel-art environment.
+
+Consider:
+- Canvas-based rendering.
+- A suitable 2D rendering library.
+- DOM-based sprites where appropriate.
+- CSS animations for interface elements.
+
+A canvas-based or 2D scene-rendering approach may be preferable for a large world containing many animated characters.
+
+However, use a practical architecture that fits the existing environment.
+
+Keep the application maintainable.
+
+Do not add large dependencies without a clear benefit.
+
+## 17.5. Pixel-Art Rendering
+
+Preserve crisp pixel edges.
+
+For pixel-art images and sprites:
+- Use nearest-neighbor scaling where applicable.
+- Avoid unwanted image smoothing.
+- Keep sprite proportions consistent.
+- Use integer scaling when practical.
+- Ensure sprites remain sharp at different zoom levels.
+
+Do not stretch sprites disproportionately.
+
+Do not let the environment become blurry when the camera zooms in.
+
+## 17.6. Performance
+
+The simulation should remain responsive during continuous animation.
+
+Implement:
+- Efficient animation loops.
+- Proper cleanup of timers and event listeners.
+- Appropriate frame updates.
+- Efficient rendering of characters.
+- Limited unnecessary component re-renders.
+- Smooth camera transforms.
+- Sensible animation throttling when the tab is inactive.
+
+Avoid running a separate uncontrolled animation loop for every character.
+
+Use a coordinated simulation update system where practical.
+
+Test performance with multiple characters moving simultaneously.
+
+## 17.7. No Fake Functionality
+
+Do not create controls that only look interactive.
+
+Every visible interactive control must work.
+
+Examples:
+- Theme toggle changes both the UI and environment.
+- Camera controls actually move and zoom the world.
+- Selecting a character opens the correct inspector.
+- Task filters update the visible tasks.
+- Notifications can be disabled.
+- Music controls operate the actual audio playback.
+- Settings change the simulation.
+- Room navigation focuses the correct room.
+- Task progress updates the relevant character behavior.
+- Completed tasks generate corresponding activity events.
+
+If a feature cannot be implemented with the available assets or browser capabilities, provide a working, graceful alternative rather than a nonfunctional placeholder.
+
+---
+
+# 18. ASSET STRATEGY
+
+The quality of the pixel-art world is essential.
+
+Do not rely on emoji as the primary character art.
+
+Do not create a world consisting only of colored rectangles and generic icons.
+
+Use a consistent pixel-art asset pipeline.
+
+Preferred asset sources:
+1. Existing local project assets.
+2. Original pixel-art sprites generated or created specifically for this project.
+3. Legally usable pixel-art assets with appropriate licenses.
+4. Procedurally generated pixel-art elements when suitable.
+
+If using sprite sheets:
+- Understand the sprite-sheet layout.
+- Extract the correct animation frames.
+- Define appropriate frame dimensions.
+- Map animations to behavioral states.
+- Preserve transparent backgrounds.
+- Ensure sprite orientation and scale are consistent.
+
+If suitable assets are unavailable, create a cohesive procedural pixel-art environment rather than leaving the office empty.
+
+Procedural assets should include recognizable furniture, computers, chairs, doors, plants, lamps, and other office objects.
+
+Keep procedural generation consistent with the intended art direction.
+
+Do not use external image URLs as the only source of essential visual assets.
+
+The project should not break if a third-party image host is unavailable.
+
+If external audio or visual assets are used, provide graceful fallbacks.
+
+---
+
+# 19. SUGGESTED COMPONENT ARCHITECTURE
+
+Organize the project into clear, maintainable components.
+
+Possible structure:
+
+- `App`
+- `ApplicationHeader`
+- `NavigationSidebar`
+- `OfficeViewport`
+- `OfficeWorld`
+- `OfficeRenderer`
+- `RoomLayer`
+- `CharacterSprite`
+- `CharacterAnimationController`
+- `CharacterMovementController`
+- `CameraController`
+- `OfficeMiniMap`
+- `RoomNavigation`
+- `AgentRoster`
+- `AgentInspector`
+- `TaskBoard`
+- `TaskCard`
+- `ProductivityOverview`
+- `ActivityLog`
+- `NotificationCenter`
+- `NotificationToast`
+- `AudioController`
+- `ThemeController`
+- `DayNightController`
+- `SettingsPanel`
+
+Suggested data modules:
+- `agents`
+- `rooms`
+- `tasks`
+- `simulation`
+- `audio`
+- `theme`
+
+This is an architectural suggestion rather than a requirement to create every file exactly as named.
+
+Keep the implementation appropriate to the project's existing framework.
+
+Avoid unnecessary abstraction.
+
+---
+
+# 20. USER EXPERIENCE AND ACCESSIBILITY
+
+Make the experience comfortable and intuitive.
+
+Users should quickly understand:
+- Where they are.
+- Which rooms exist.
+- What each character is doing.
+- How to inspect tasks.
+- How to move around the office.
+- How to control music.
+- How to enable or disable notifications.
+- How to switch to dark mode.
+
+Provide:
+- Clear hover states.
+- Keyboard-accessible controls.
+- Appropriate focus indicators.
+- Readable labels.
+- Tooltips for unfamiliar icons.
+- Accessible text contrast.
+- Touch-friendly controls.
+- Reduced-motion support.
+- Graceful handling of unavailable audio.
+
+Do not rely exclusively on color to communicate task status.
+
+Do not make tiny icons the only way to access essential functionality.
+
+Avoid unnecessary confirmation dialogs for harmless actions.
+
+---
+
+# 21. REQUIRED ACCEPTANCE TESTS
+
+Before considering the project complete, verify the following.
+
+### Environment
+- [ ] All six rooms exist.
+- [ ] Rooms are visually distinct.
+- [ ] Rooms are connected or navigable.
+- [ ] The office has a consistent pixel-art style.
+- [ ] The environment looks polished at normal zoom.
+
+### Characters
+- [ ] At least eight distinct characters are present.
+- [ ] Every character has a unique name and role.
+- [ ] Every character has at least two or three distinct behavioral states.
+- [ ] Working animations are visibly different from idle animations.
+- [ ] Walking animations work.
+- [ ] Characters can move between appropriate locations.
+- [ ] Characters do not routinely walk through major obstacles.
+- [ ] Character selection works.
+- [ ] The inspector displays the correct character information.
+
+### Tasks
+- [ ] Characters have meaningful task queues.
+- [ ] Task progress updates over time.
+- [ ] Task statuses are consistent.
+- [ ] Completed tasks reach 100%.
+- [ ] Completion events are recorded in the activity log.
+- [ ] Characters react appropriately to task completion.
+
+### Camera
+- [ ] Drag-to-pan works.
+- [ ] Mouse-wheel zoom works.
+- [ ] Touch gestures work on mobile.
+- [ ] Zoom controls work.
+- [ ] Reset camera works.
+- [ ] Room presets work.
+- [ ] The mini-map works.
+- [ ] Following a selected character works.
+
+### Interactions
+- [ ] Interactive objects respond to selection.
+- [ ] Contextual information is displayed correctly.
+- [ ] Interactions do not trigger accidentally during camera dragging.
+
+### Notifications
+- [ ] Task completion generates notifications when enabled.
+- [ ] Notifications can be disabled.
+- [ ] Disabling notifications does not stop the simulation.
+- [ ] Notification sounds respect the sound settings.
+- [ ] The notification center works.
+
+### Audio
+- [ ] Music playback works after user interaction.
+- [ ] Volume control works.
+- [ ] Mute works.
+- [ ] Sound effects can be disabled independently.
+- [ ] Audio failures do not break the application.
+
+### Themes
+- [ ] Light mode works.
+- [ ] Dark mode changes the dashboard.
+- [ ] Dark mode changes the actual pixel-art environment.
+- [ ] Windows show a nighttime environment in night mode.
+- [ ] Lighting changes appropriately.
+- [ ] Characters remain readable.
+- [ ] Theme preferences persist locally.
+
+### Responsiveness
+- [ ] Desktop layout works.
+- [ ] Tablet layout works.
+- [ ] Mobile layout works.
+- [ ] Side panels adapt to narrow screens.
+- [ ] Camera controls work with touch.
+- [ ] Essential interactions remain accessible.
+
+### Stability
+- [ ] No critical runtime errors.
+- [ ] No broken essential assets.
+- [ ] No uncontrolled timer accumulation.
+- [ ] No obvious memory leaks from animation loops.
+- [ ] Simulation pause/resume works.
+- [ ] The application remains usable during continuous animation.
+
+---
+
+# 22. FINAL QUALITY BAR
+
+The final result must look and feel like a real interactive pixel-art simulation, not a generic dashboard template.
+
+Prioritize the following in order:
+
+1. The visual quality and charm of the pixel-art office.
+2. Character expressiveness and believable movement.
+3. A smooth and intuitive camera system.
+4. Functional character inspection and task interactions.
+5. A cohesive dashboard and activity system.
+6. Beautiful, immersive day/night environments.
+7. A genuinely atmospheric dark mode.
+8. Subtle audio and notifications.
+9. Responsive layouts.
+10. Performance and maintainability.
+
+Do not sacrifice the quality of the virtual world to add unnecessary dashboard widgets.
+
+Do not sacrifice functionality for visual decoration.
+
+The office must be visually compelling even when the user is simply watching the characters work.
+
+The characters must be entertaining enough that users naturally want to zoom in, follow them, inspect their tasks, and discover what they are doing.
+
+The dark mode should feel like entering a peaceful office late at night, with warm desk lamps illuminating tiny characters who are quietly finishing their work.
+
+The overall experience should feel like a small, lovingly crafted digital world.
+
+**Build a complete, working, visually polished Cozy Pixel Office simulator that can be explored directly in a browser and showcased as a premium interactive portfolio project.**

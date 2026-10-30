@@ -1,0 +1,6 @@
+{
+  "name": "Cozy Pixel Office",
+  "description": "An interactive, living pixel-art virtual office simulator with adorable AI-agent-inspired characters, six interconnected rooms, dynamic day/night lighting, ambient lo-fi audio, and a real-time productivity dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

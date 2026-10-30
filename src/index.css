@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-canvas: #FFF4DF;
+    --bg-elevated: #F8EBD5;
+    --bg-secondary: #EFE0C6;
+    --text-main: #493A35;
+    --text-muted: #7C6354;
+    --border-color: #DECBB1;
+    --accent-peach: #F5B99B;
+    --accent-pink: #F3C6D3;
+    --accent-sage: #B8D0B0;
+    --accent-mint: #C9E4D4;
+    --accent-sky: #B9D9ED;
+    --accent-lavender: #D5C9F0;
+    --accent-brown: #8B6F5A;
+  }
+
+  .dark {
+    --bg-canvas: #171923;
+    --bg-elevated: #222535;
+    --bg-secondary: #2B3042;
+    --text-main: #E9EAF2;
+    --text-muted: #A8ADC2;
+    --border-color: #3B4054;
+    --accent-peach: #E9B49B;
+    --accent-pink: #D89FB3;
+    --accent-sage: #94B89B;
+    --accent-mint: #A7D8BE;
+    --accent-sky: #8EBCE0;
+    --accent-lavender: #AFA1F5;
+    --accent-brown: #B4947C;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-main);
+    overflow: hidden;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-pixel {
+  font-family: 'Silkscreen', monospace;
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Custom subtle scrollbars for panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 111, 90, 0.28);
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(168, 173, 194, 0.25);
+}
+
